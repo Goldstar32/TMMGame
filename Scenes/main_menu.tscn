@@ -56,9 +56,9 @@ layout_mode = 2
 alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
+size_flags_horizontal = 6
 theme_override_constants/separation = 20
 alignment = 1
 
