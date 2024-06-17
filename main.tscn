@@ -8,3 +8,10 @@ offset_top = 123.0
 offset_right = 708.0
 offset_bottom = 218.0
 text = "Din mamma2"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 120.0
+offset_top = 409.0
+offset_right = 584.0
+offset_bottom = 436.0
+text = "Test, test & test"
