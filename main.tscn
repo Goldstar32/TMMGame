@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://cq7gyyaw4m0wu"]
+[gd_scene format=3 uid="uid://cow8lbrsjrcyb"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 493.0
+offset_top = 123.0
+offset_right = 708.0
+offset_bottom = 218.0
+text = "Din mamma"
