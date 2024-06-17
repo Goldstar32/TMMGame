@@ -10,3 +10,10 @@ offset_bottom = 218.0
 text = "Din mamma2"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 120.0
+offset_top = 409.0
+offset_right = 584.0
+offset_bottom = 436.0
+text = "Test, test & test"
