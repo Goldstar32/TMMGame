@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cow8lbrsjrcyb"]
+[gd_scene format=3 uid="uid://cq7gyyaw4m0wu"]
 
 [node name="Main" type="Node2D"]
 
@@ -8,3 +8,5 @@ offset_top = 123.0
 offset_right = 708.0
 offset_bottom = 218.0
 text = "Din mamma2"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
