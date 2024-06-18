@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dahoia7y3oll3"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/main_menu.gd" id="1_xlphf"]
-[ext_resource type="Texture2D" uid="uid://2gjjytp2h4ro" path="res://Assets/menu-backgrounds/main-menu-background-nochars.png" id="2_52nfi"]
+[ext_resource type="Texture2D" uid="uid://o58krccccykj" path="res://Assets/menu-backgrounds/main-menu-background-nochars.png" id="2_52nfi"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
