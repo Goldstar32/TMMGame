@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="TMMGame"
-run/main_scene="res://Scenes/main_menu.tscn"
+run/main_scene="res://Scenes/Menus/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/aspect="expand"
 
 [rendering]
 

@@ -12,13 +12,16 @@ func _process(delta):
 
 
 func _on_start_button_up():
+	#Byt scen till nästa
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 
 func _on_quit_button_up():
+	#Stänger ned programmet
 	get_tree().quit()
 
 
 func _on_options_button_up():
-	var options = preload("res://Scenes/options_menu.tscn").instantiate()
+	#Lägger till transitionscenen till main menu
+	var options = preload("res://Scenes/Menus/options_menu.tscn").instantiate()
 	get_tree().get_root().add_child(options)
