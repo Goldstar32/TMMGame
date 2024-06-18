@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bumkwyodpae4c"]
+[gd_scene load_steps=4 format=3 uid="uid://bumkwyodpae4c"]
 
 [ext_resource type="Script" path="res://Scenes/options_menu.gd" id="1_qylao"]
+[ext_resource type="Texture2D" uid="uid://tu2lmp5ft7qd" path="res://Assets/menu-stuff/pad-arrow.png" id="2_7tyok"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0uj0"]
-bg_color = Color(0.2484, 0.2484, 0.2484, 1)
+bg_color = Color(0.108516, 0.137763, 0.189462, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -33,10 +39,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -377.0
-offset_top = -269.0
-offset_right = 378.0
-offset_bottom = 269.0
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b0uj0")
@@ -45,9 +51,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_b0uj0")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.125
-anchor_top = 0.08
+anchor_top = 0.125
 anchor_right = 0.875
-anchor_bottom = 0.92
+anchor_bottom = 0.875
 offset_left = -57.5
 offset_top = -31.0
 offset_right = 57.5
@@ -65,11 +71,13 @@ theme_override_font_sizes/font_size = 30
 text = "Options"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="MenuPanel/MarginContainer"]
+[node name="Button" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
+size_flags_vertical = 10
 theme_override_font_sizes/font_size = 20
-text = "Exit"
+text = "
+"
+icon = ExtResource("2_7tyok")
+icon_alignment = 1
 
-[connection signal="button_up" from="MenuPanel/MarginContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="MenuPanel/MarginContainer/VBoxContainer/Button" to="." method="_on_button_button_up"]
