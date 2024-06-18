@@ -13,15 +13,20 @@ func _process(delta):
 
 func _on_start_button_up():
 	#Byt scen till nästa
+	$ClickSFX.play()
+	await get_tree().create_timer(0.3).timeout
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 
 func _on_quit_button_up():
 	#Stänger ned programmet
+	$ClickSFX.play()
+	await get_tree().create_timer(0.3).timeout
 	get_tree().quit()
 
 
 func _on_options_button_up():
 	#Lägger till transitionscenen till main menu
+	$ClickSFX.play()
 	var options = preload("res://Scenes/Menus/options_menu.tscn").instantiate()
 	get_tree().get_root().add_child(options)

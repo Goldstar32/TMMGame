@@ -15,4 +15,6 @@ func _process(delta):
 
 func _on_button_button_up():
 	#spela animationen i en halv sekund och ta bort options från scenen
+	$ClickSFX.play()
+	await get_tree().create_timer(0.3).timeout
 	get_tree().root.remove_child(options_menu)

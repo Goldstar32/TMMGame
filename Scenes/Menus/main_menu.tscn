@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dahoia7y3oll3"]
+[gd_scene load_steps=4 format=3 uid="uid://dahoia7y3oll3"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/main_menu.gd" id="1_xlphf"]
+[ext_resource type="AudioStream" uid="uid://bpffl5qstpb3y" path="res://Assets/SFX/spacebar-click-keyboard-199448.mp3" id="2_5cgxa"]
 [ext_resource type="Texture2D" uid="uid://o58krccccykj" path="res://Assets/menu-backgrounds/main-menu-background-nochars.png" id="2_52nfi"]
 
 [node name="MainMenu" type="Control"]
@@ -11,6 +12,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xlphf")
+
+[node name="ClickSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_5cgxa")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -64,16 +68,19 @@ alignment = 1
 
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 40
 text = "Start Game"
 
 [node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 40
 text = "Options"
 
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 40
 text = "Quit To Desktop"
 
