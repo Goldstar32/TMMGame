@@ -1,7 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://bumkwyodpae4c"]
+[gd_scene load_steps=7 format=3 uid="uid://bumkwyodpae4c"]
 
 [ext_resource type="Script" path="res://Scenes/options_menu.gd" id="1_qylao"]
 [ext_resource type="Texture2D" uid="uid://tu2lmp5ft7qd" path="res://Assets/menu-stuff/pad-arrow.png" id="2_7tyok"]
+
+[sub_resource type="Animation" id="Animation_6bkmo"]
+resource_name = "pad_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MenuPanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(176, 1000), Vector2(176, 74)]
+}
+
+[sub_resource type="Animation" id="Animation_gf0di"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MenuPanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(176, 74)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_so4y0"]
+_data = {
+"RESET": SubResource("Animation_gf0di"),
+"pad_animation": SubResource("Animation_6bkmo")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0uj0"]
 bg_color = Color(0.108516, 0.137763, 0.189462, 1)
@@ -24,13 +61,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qylao")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_so4y0")
+}
 
 [node name="MenuPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -42,7 +76,7 @@ anchor_bottom = 0.5
 offset_left = -400.0
 offset_top = -250.0
 offset_right = 400.0
-offset_bottom = 250.0
+offset_bottom = 250.001
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b0uj0")
