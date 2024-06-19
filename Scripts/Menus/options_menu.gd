@@ -1,10 +1,10 @@
 extends Control
 @onready var options_menu = $"."
+@onready var click_sound = preload("res://Assets/SFX/spacebar-click-keyboard-199448.mp3")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#spela padda up animationen
 	pass
 
 
@@ -14,7 +14,7 @@ func _process(delta):
 
 
 func _on_button_button_up():
-	#spela animationen i en halv sekund och ta bort options från scenen
-	$ClickSFX.play()
-	await get_tree().create_timer(0.3).timeout
+	$AudioStreamPlayer2D.stream = click_sound
+	$AudioStreamPlayer2D.play()
+	
 	get_tree().root.remove_child(options_menu)
