@@ -150,5 +150,5 @@ icon = ExtResource("1_konqf")
 icon_alignment = 1
 
 [connection signal="item_selected" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer/Mode" to="." method="_on_option_button_item_selected"]
-[connection signal="value_changed" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer2/SFXSlider" to="." method="_on_h_slider_2_value_changed"]
+[connection signal="value_changed" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer2/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="button_up" from="MenuPanel/MarginContainer/VBoxContainer/Close" to="." method="_on_button_button_up"]

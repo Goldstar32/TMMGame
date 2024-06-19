@@ -37,11 +37,11 @@ func animateMenu(direction):
 	if direction == "down":
 		tween.tween_property(menu_panel, "position", Vector2(posX, screenSize[1]), 0.5)
 
+#Ändrar skärmläge i spelet
 func _on_option_button_item_selected(index):
 	$SFX.stream = click_sound
 	$SFX.play()
-	
-	#Ändrar skärmläge i spelet
+
 	match index:
 		0:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
@@ -50,8 +50,5 @@ func _on_option_button_item_selected(index):
 		2:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
-
-
-func _on_SFXSlider_value_changed(value):
+func _on_sfx_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(sfx_bus, linear_to_db(value))
-	
