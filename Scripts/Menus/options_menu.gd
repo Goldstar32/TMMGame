@@ -23,7 +23,7 @@ func _on_button_button_up():
 	await get_tree().create_timer(0.5).timeout
 	get_tree().root.remove_child(options_menu)
 
-
+#gör en tween som är baserad på skärmstorleken
 func animateMenu(direction):
 	var posX = screenSize[0]/2 - menu_panel.size[0]/2
 	var posY = screenSize[1]/2 - menu_panel.size[1]/2
