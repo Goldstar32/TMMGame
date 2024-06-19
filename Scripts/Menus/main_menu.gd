@@ -12,8 +12,8 @@ func _process(delta):
 
 
 func _on_start_button_up():
-	$AudioStreamPlayer2D.stream = click_sound
-	$AudioStreamPlayer2D.play()
+	$SFX.stream = click_sound
+	$SFX.play()
 	
 	#Byt scen till nästa
 	await get_tree().create_timer(0.3).timeout
@@ -21,8 +21,8 @@ func _on_start_button_up():
 
 
 func _on_quit_button_up():
-	$AudioStreamPlayer2D.stream = click_sound
-	$AudioStreamPlayer2D.play()
+	$SFX.stream = click_sound
+	$SFX.play()
 	
 	#Stänger ned programmet
 	await get_tree().create_timer(0.3).timeout
@@ -30,8 +30,8 @@ func _on_quit_button_up():
 
 
 func _on_options_button_up():
-	$AudioStreamPlayer2D.stream = click_sound
-	$AudioStreamPlayer2D.play()
+	$SFX.stream = click_sound
+	$SFX.play()
 	
 	#Lägger till optionsscenen till main menu
 	var options = preload("res://Scenes/Menus/options_menu.tscn").instantiate()
