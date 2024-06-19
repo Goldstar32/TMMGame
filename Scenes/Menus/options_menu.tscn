@@ -26,7 +26,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_mwxus")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
 
 [node name="MenuPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -67,7 +67,34 @@ theme_override_font_sizes/font_size = 30
 text = "Options"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="MenuPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/h_separation = 350
+columns = 2
+
+[node name="Display_Mode" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 28
+text = "Display Mode"
+
+[node name="OptionButton" type="OptionButton" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 20
+item_count = 3
+selected = 0
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Borderless"
+popup/item_2/id = 2
+
+[node name="Close" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 mouse_default_cursor_shape = 2
@@ -77,4 +104,5 @@ text = "
 icon = ExtResource("1_konqf")
 icon_alignment = 1
 
-[connection signal="button_up" from="MenuPanel/MarginContainer/VBoxContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="item_selected" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="button_up" from="MenuPanel/MarginContainer/VBoxContainer/Close" to="." method="_on_button_button_up"]
