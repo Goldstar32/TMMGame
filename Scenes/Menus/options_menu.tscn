@@ -117,6 +117,8 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
 
 [node name="SFX" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer2"]
 layout_mode = 2
@@ -138,6 +140,8 @@ text = "Music"
 [node name="MusicSlider" type="HSlider" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer2"]
 layout_mode = 2
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
 
 [node name="Close" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -150,5 +154,7 @@ icon = ExtResource("1_konqf")
 icon_alignment = 1
 
 [connection signal="item_selected" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer/Mode" to="." method="_on_option_button_item_selected"]
+[connection signal="value_changed" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer2/MainSlider" to="." method="_on_main_slider_value_changed"]
 [connection signal="value_changed" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer2/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="button_up" from="MenuPanel/MarginContainer/VBoxContainer/Close" to="." method="_on_button_button_up"]

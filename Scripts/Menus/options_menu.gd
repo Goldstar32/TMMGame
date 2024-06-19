@@ -3,13 +3,19 @@ extends Control
 @onready var click_sound = preload("res://Assets/SFX/spacebar-click-keyboard-199448.mp3")
 @onready var menu_panel = $MenuPanel
 @onready var sfx_bus = AudioServer.get_bus_index("SFX")
+@onready var main_bus = AudioServer.get_bus_index("Master")
+@onready var music_bus = AudioServer.get_bus_index("Music")
 var screenSize 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var sfx_slider = $MenuPanel/MarginContainer/VBoxContainer/GridContainer2/SFXSlider
 	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(sfx_bus))
-
+	var main_slider = $MenuPanel/MarginContainer/VBoxContainer/GridContainer2/MainSlider
+	main_slider.value = db_to_linear(AudioServer.get_bus_volume_db(main_bus))
+	var music_slider = $MenuPanel/MarginContainer/VBoxContainer/GridContainer2/MainSlider
+	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(music_bus))
+	
 	screenSize = get_viewport().get_visible_rect().size
 	animateMenu("up")
 
@@ -52,3 +58,11 @@ func _on_option_button_item_selected(index):
 
 func _on_sfx_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(sfx_bus, linear_to_db(value))
+
+
+func _on_main_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(main_bus, linear_to_db(value))
+
+
+func _on_music_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(music_bus, linear_to_db(value))
