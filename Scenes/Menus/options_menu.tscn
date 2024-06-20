@@ -96,7 +96,7 @@ popup/item_1/id = 1
 popup/item_2/text = "Borderless"
 popup/item_2/id = 2
 
-[node name="Label" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer"]
+[node name="SoundSettings" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Sound settings:"
