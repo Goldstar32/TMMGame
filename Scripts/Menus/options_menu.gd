@@ -1,10 +1,13 @@
 extends Control
 @onready var options_menu = $"."
-@onready var click_sound = preload("res://Assets/SFX/spacebar-click-keyboard-199448.mp3")
 @onready var menu_panel = $MenuPanel
-@onready var sfx_bus = AudioServer.get_bus_index("SFX")
+
+@onready var click_sound = preload("res://Assets/SFX/spacebar-click-keyboard-199448.mp3")
+
 @onready var main_bus = AudioServer.get_bus_index("Master")
+@onready var sfx_bus = AudioServer.get_bus_index("SFX")
 @onready var music_bus = AudioServer.get_bus_index("Music")
+
 var screenSize 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,7 +16,7 @@ func _ready():
 	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(sfx_bus))
 	var main_slider = $MenuPanel/MarginContainer/VBoxContainer/GridContainer2/MainSlider
 	main_slider.value = db_to_linear(AudioServer.get_bus_volume_db(main_bus))
-	var music_slider = $MenuPanel/MarginContainer/VBoxContainer/GridContainer2/MainSlider
+	var music_slider = $MenuPanel/MarginContainer/VBoxContainer/GridContainer2/MusicSlider
 	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(music_bus))
 	
 	screenSize = get_viewport().get_visible_rect().size
@@ -56,13 +59,20 @@ func _on_option_button_item_selected(index):
 		2:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
-func _on_sfx_slider_value_changed(value):
-	AudioServer.set_bus_volume_db(sfx_bus, linear_to_db(value))
-
-
+#Ändra ljudnivåer efter sliders
 func _on_main_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(main_bus, linear_to_db(value))
-
-
+func _on_sfx_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(sfx_bus, linear_to_db(value))
 func _on_music_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(music_bus, linear_to_db(value))
+#Spela ljud när man ändrar ljudnivå
+func _on_main_slider_drag_ended(value_changed):
+	$SFX.stream = click_sound
+	$SFX.play()
+func _on_sfx_slider_drag_ended(value_changed):
+	$SFX.stream = click_sound
+	$SFX.play()
+func _on_music_slider_drag_ended(value_changed):
+	$SFX.stream = click_sound
+	$SFX.play()
