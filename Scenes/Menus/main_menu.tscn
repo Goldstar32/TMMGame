@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dahoia7y3oll3"]
+[gd_scene load_steps=4 format=3 uid="uid://dahoia7y3oll3"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/main_menu.gd" id="1_xlphf"]
 [ext_resource type="Texture2D" uid="uid://o58krccccykj" path="res://Assets/menu-backgrounds/main-menu-background-nochars.png" id="2_52nfi"]
+[ext_resource type="AudioStream" uid="uid://cv4e4oqc70eqb" path="res://Assets/music/main-menu-song.mp3" id="2_jcnbh"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +12,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xlphf")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_jcnbh")
+bus = &"Music"
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
 bus = &"SFX"
