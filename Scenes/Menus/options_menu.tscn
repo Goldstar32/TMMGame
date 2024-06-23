@@ -60,7 +60,7 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 40
 
 [node name="Options" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -68,25 +68,81 @@ theme_override_font_sizes/font_size = 45
 text = "Options"
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="MenuPanel/MarginContainer/VBoxContainer"]
+[node name="Content" type="GridContainer" parent="MenuPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_constants/h_separation = 350
+theme_override_constants/h_separation = 200
 theme_override_constants/v_separation = 20
 columns = 2
 
-[node name="Display" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer"]
+[node name="SoundOptions" type="VBoxContainer" parent="MenuPanel/MarginContainer/VBoxContainer/Content"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Sound" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Sound"
+
+[node name="GridContainer2" type="GridContainer" parent="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions"]
+layout_mode = 2
+theme_override_constants/h_separation = 30
+columns = 2
+
+[node name="Main" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Main
+"
+
+[node name="MainSlider" type="HSlider" parent="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+
+[node name="Music" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+
+[node name="SFX" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+
+[node name="OtherOptions" type="GridContainer" parent="MenuPanel/MarginContainer/VBoxContainer/Content"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 2
+
+[node name="Display" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/Content/OtherOptions"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 35
 text = "Display Mode"
 
-[node name="Mode" type="OptionButton" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer"]
+[node name="Mode" type="OptionButton" parent="MenuPanel/MarginContainer/VBoxContainer/Content/OtherOptions"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 22
 item_count = 3
 selected = 0
 popup/item_0/text = "Windowed"
@@ -95,53 +151,6 @@ popup/item_1/text = "Fullscreen"
 popup/item_1/id = 1
 popup/item_2/text = "Borderless"
 popup/item_2/id = 2
-
-[node name="SoundSettings" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "Sound Settings"
-
-[node name="GridContainer2" type="GridContainer" parent="MenuPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 30
-columns = 2
-
-[node name="Main" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "Main
-"
-
-[node name="MainSlider" type="HSlider" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer2"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-max_value = 1.0
-step = 0.001
-
-[node name="SFX" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "SFX"
-
-[node name="SFXSlider" type="HSlider" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer2"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-size_flags_vertical = 4
-max_value = 1.0
-step = 0.001
-
-[node name="Music" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "Music"
-
-[node name="MusicSlider" type="HSlider" parent="MenuPanel/MarginContainer/VBoxContainer/GridContainer2"]
-layout_mode = 2
-size_flags_vertical = 4
-max_value = 1.0
-step = 0.001
 
 [node name="Close" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -153,11 +162,11 @@ text = "
 icon = ExtResource("1_konqf")
 icon_alignment = 1
 
-[connection signal="item_selected" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer/Mode" to="." method="_on_option_button_item_selected"]
-[connection signal="drag_ended" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer2/MainSlider" to="." method="_on_main_slider_drag_ended"]
-[connection signal="value_changed" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer2/MainSlider" to="." method="_on_main_slider_value_changed"]
-[connection signal="drag_ended" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer2/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
-[connection signal="value_changed" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer2/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
-[connection signal="drag_ended" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer2/MusicSlider" to="." method="_on_music_slider_drag_ended"]
-[connection signal="value_changed" from="MenuPanel/MarginContainer/VBoxContainer/GridContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="drag_ended" from="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2/MainSlider" to="." method="_on_main_slider_drag_ended"]
+[connection signal="value_changed" from="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2/MainSlider" to="." method="_on_main_slider_value_changed"]
+[connection signal="drag_ended" from="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2/MusicSlider" to="." method="_on_music_slider_drag_ended"]
+[connection signal="value_changed" from="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="drag_ended" from="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="value_changed" from="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="item_selected" from="MenuPanel/MarginContainer/VBoxContainer/Content/OtherOptions/Mode" to="." method="_on_option_button_item_selected"]
 [connection signal="button_up" from="MenuPanel/MarginContainer/VBoxContainer/Close" to="." method="_on_button_button_up"]
