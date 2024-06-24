@@ -24,7 +24,7 @@ func _ready():
 	mode_option_button.select(window_mode)
 	
 	screenSize = get_viewport().get_visible_rect().size
-	animateMenu("up")
+	animate_menu("up")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -34,11 +34,11 @@ func _on_button_button_up():
 	$SFX.stream = click_sound
 	$SFX.play()
 	
-	animateMenu("down")
+	animate_menu("down")
 	await get_tree().create_timer(0.5).timeout
 	get_tree().root.remove_child(options_menu)
 
-#Ändrar skärmläge i spelet
+# Ändrar skärmläge i spelet
 func _on_option_button_item_selected(index):
 	$SFX.stream = click_sound
 	$SFX.play()
@@ -51,14 +51,14 @@ func _on_option_button_item_selected(index):
 		2:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
-#Ändra ljudnivåer efter sliders
+# Ändra ljudnivåer efter sliders
 func _on_main_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(main_bus, linear_to_db(value))
 func _on_music_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(music_bus, linear_to_db(value))
 func _on_sfx_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(sfx_bus, linear_to_db(value))
-#Spela ljud när man ändrar ljudnivå
+# Spela ljud när man ändrar ljudnivå
 func _on_main_slider_drag_ended(value_changed):
 	$SFX.stream = click_sound
 	$SFX.play()
@@ -69,8 +69,8 @@ func _on_sfx_slider_drag_ended(value_changed):
 	$SFX.stream = click_sound
 	$SFX.play()
 	
-#gör en tween som är baserad på skärmstorleken
-func animateMenu(direction):
+# Gör en tween som är baserad på skärmstorleken
+func animate_menu(direction):
 	var posX = screenSize[0]/2 - menu_panel.size[0]/2
 	var posY = screenSize[1]/2 - menu_panel.size[1]/2
 	

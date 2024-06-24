@@ -14,7 +14,7 @@ func _on_start_button_up():
 	$SFX.stream = click_sound
 	$SFX.play()
 	
-	#Byt scen till nästa
+	# Byt scen till nästa
 	await get_tree().create_timer(0.3).timeout
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
@@ -23,7 +23,7 @@ func _on_quit_button_up():
 	$SFX.stream = click_sound
 	$SFX.play()
 	
-	#Stänger ned programmet
+	# Stänger ned programmet
 	await get_tree().create_timer(0.3).timeout
 	get_tree().quit()
 
@@ -32,6 +32,6 @@ func _on_options_button_up():
 	$SFX.stream = click_sound
 	$SFX.play()
 	
-	#Lägger till optionsscenen till main menu
+	# Lägger till optionsscenen till main menu
 	var options = preload("res://Scenes/Menus/options_menu.tscn").instantiate()
 	get_tree().get_root().add_child(options)
