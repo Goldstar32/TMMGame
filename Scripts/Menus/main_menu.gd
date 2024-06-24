@@ -14,9 +14,9 @@ func _on_start_button_up():
 	$SFX.stream = click_sound
 	$SFX.play()
 	
-	# Byt scen till nästa
+	# Change scene to TestLevel
 	await get_tree().create_timer(0.3).timeout
-	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Testing/test_level.tscn")
 
 
 func _on_quit_button_up():
