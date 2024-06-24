@@ -295,7 +295,7 @@ z_index = 1
 position = Vector2(66, 33)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
 [node name="TileMapGrass" type="TileMap" parent="."]
