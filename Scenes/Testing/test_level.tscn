@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c7voc41pf7a2"]
 
 [ext_resource type="PackedScene" uid="uid://bxes45efca7ys" path="res://Scenes/Testing/player.tscn" id="1_pnqww"]
-[ext_resource type="Texture2D" uid="uid://xr5vxv2x8dj" path="res://Assets/test-sprites/Texture/tileset_grass.png" id="2_4jheh"]
-[ext_resource type="Texture2D" uid="uid://bspu3r3fipy0n" path="res://Assets/test-sprites/Texture/props.png" id="3_6nox6"]
+[ext_resource type="Texture2D" uid="uid://xr5vxv2x8dj" path="res://Assets/sprites/test-sprites/Texture/tileset_grass.png" id="2_4jheh"]
+[ext_resource type="Texture2D" uid="uid://bspu3r3fipy0n" path="res://Assets/sprites/test-sprites/Texture/props.png" id="3_6nox6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vclum"]
 texture = ExtResource("2_4jheh")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxes45efca7ys"]
 
-[ext_resource type="Texture2D" uid="uid://dqmu6dknbxgwo" path="res://Assets/character-sprites/mafioso.png" id="1_330hy"]
+[ext_resource type="Texture2D" uid="uid://dqmu6dknbxgwo" path="res://Assets/sprites/character-sprites/mafioso.png" id="1_330hy"]
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_jv12e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_278f1"]

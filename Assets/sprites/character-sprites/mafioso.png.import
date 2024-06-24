@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xr5vxv2x8dj"
-path="res://.godot/imported/tileset_grass.png-461e129e8290f04a0889a531017b86f7.ctex"
+uid="uid://dqmu6dknbxgwo"
+path="res://.godot/imported/mafioso.png-5793299f8021f19e5ad52c8accf333e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/test-sprites/Texture/tileset_grass.png"
-dest_files=["res://.godot/imported/tileset_grass.png-461e129e8290f04a0889a531017b86f7.ctex"]
+source_file="res://Assets/sprites/character-sprites/mafioso.png"
+dest_files=["res://.godot/imported/mafioso.png-5793299f8021f19e5ad52c8accf333e7.ctex"]
 
 [params]
 

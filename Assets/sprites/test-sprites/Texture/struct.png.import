@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvawvacyrxxlk"
-path="res://.godot/imported/shadow_plant.png-f2574c534d954152f582f204c529bd6c.ctex"
+uid="uid://t2kgvb7nyjqn"
+path="res://.godot/imported/struct.png-9038423a6978d488c4b7344c0a512aa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/test-sprites/Texture/shadow_plant.png"
-dest_files=["res://.godot/imported/shadow_plant.png-f2574c534d954152f582f204c529bd6c.ctex"]
+source_file="res://Assets/sprites/test-sprites/Texture/struct.png"
+dest_files=["res://.godot/imported/struct.png-9038423a6978d488c4b7344c0a512aa0.ctex"]
 
 [params]
 

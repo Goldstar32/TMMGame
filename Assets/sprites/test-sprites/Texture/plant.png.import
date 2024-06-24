@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqmu6dknbxgwo"
-path="res://.godot/imported/mafioso.png-489b8342b1e7e2c97e5c2d9f43be8f10.ctex"
+uid="uid://byxte7avrpnca"
+path="res://.godot/imported/plant.png-cd08fb57cb34cdacb681a1f6efd2ab58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/character-sprites/mafioso.png"
-dest_files=["res://.godot/imported/mafioso.png-489b8342b1e7e2c97e5c2d9f43be8f10.ctex"]
+source_file="res://Assets/sprites/test-sprites/Texture/plant.png"
+dest_files=["res://.godot/imported/plant.png-cd08fb57cb34cdacb681a1f6efd2ab58.ctex"]
 
 [params]
 
