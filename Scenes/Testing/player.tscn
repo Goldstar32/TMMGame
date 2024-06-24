@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxes45efca7ys"]
+
+[ext_resource type="Texture2D" uid="uid://dqmu6dknbxgwo" path="res://Assets/character-sprites/mafioso.png" id="1_330hy"]
+[ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_jv12e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_278f1"]
+size = Vector2(16, 49)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_jv12e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_330hy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_278f1")
