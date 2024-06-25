@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bumkwyodpae4c"]
+[gd_scene load_steps=6 format=3 uid="uid://bumkwyodpae4c"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/options_menu.gd" id="1_mwxus"]
-[ext_resource type="FontFile" uid="uid://dftd16vvel3ma" path="res://Assets/fonts/ByteBounce.ttf" id="2_xmtr6"]
+[ext_resource type="FontFile" uid="uid://dftd16vvel3ma" path="res://Assets/styling/fonts/ByteBounce.ttf" id="2_4w1wg"]
 [ext_resource type="Texture2D" uid="uid://tu2lmp5ft7qd" path="res://Assets/images/menu-stuff/pad-arrow.png" id="3_3nwrf"]
+[ext_resource type="Theme" uid="uid://brj6qsyhfjkw3" path="res://Assets/styling/themes/menu_button_theme.tres" id="3_w5kah"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0uj0"]
 bg_color = Color(0.108516, 0.137763, 0.189462, 1)
@@ -65,7 +66,7 @@ theme_override_constants/separation = 40
 
 [node name="Options" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_xmtr6")
+theme_override_fonts/font = ExtResource("2_4w1wg")
 theme_override_font_sizes/font_size = 96
 text = "Options"
 horizontal_alignment = 1
@@ -84,7 +85,7 @@ theme_override_constants/separation = 20
 
 [node name="Sound" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_xmtr6")
+theme_override_fonts/font = ExtResource("2_4w1wg")
 theme_override_font_sizes/font_size = 64
 text = "Sound"
 
@@ -95,7 +96,7 @@ columns = 2
 
 [node name="Main" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_xmtr6")
+theme_override_fonts/font = ExtResource("2_4w1wg")
 theme_override_font_sizes/font_size = 48
 text = "Main
 "
@@ -110,7 +111,7 @@ step = 0.001
 
 [node name="Music" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_xmtr6")
+theme_override_fonts/font = ExtResource("2_4w1wg")
 theme_override_font_sizes/font_size = 48
 text = "Music"
 
@@ -122,7 +123,7 @@ step = 0.001
 
 [node name="SFX" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_xmtr6")
+theme_override_fonts/font = ExtResource("2_4w1wg")
 theme_override_font_sizes/font_size = 48
 text = "SFX"
 
@@ -142,15 +143,14 @@ columns = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("2_xmtr6")
+theme_override_fonts/font = ExtResource("2_4w1wg")
 theme_override_font_sizes/font_size = 64
 text = "Display"
 
 [node name="Mode" type="OptionButton" parent="MenuPanel/MarginContainer/VBoxContainer/Content/OtherOptions"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("2_xmtr6")
-theme_override_font_sizes/font_size = 32
+theme = ExtResource("3_w5kah")
 item_count = 3
 selected = 0
 popup/item_0/text = "Windowed"

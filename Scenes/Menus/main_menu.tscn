@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dahoia7y3oll3"]
+[gd_scene load_steps=6 format=3 uid="uid://dahoia7y3oll3"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/main_menu.gd" id="1_xlphf"]
 [ext_resource type="Texture2D" uid="uid://o58krccccykj" path="res://Assets/images/menu-stuff/main-menu-background-nochars.png" id="2_52nfi"]
 [ext_resource type="AudioStream" uid="uid://cv4e4oqc70eqb" path="res://Assets/music/main-menu-song.mp3" id="2_jcnbh"]
-[ext_resource type="FontFile" uid="uid://dftd16vvel3ma" path="res://Assets/fonts/ByteBounce.ttf" id="4_0mkaa"]
+[ext_resource type="FontFile" uid="uid://dftd16vvel3ma" path="res://Assets/styling/fonts/ByteBounce.ttf" id="4_0mkaa"]
+[ext_resource type="Theme" uid="uid://brj6qsyhfjkw3" path="res://Assets/styling/themes/menu_button_theme.tres" id="5_qxydu"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -77,22 +78,19 @@ alignment = 1
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_fonts/font = ExtResource("4_0mkaa")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("5_qxydu")
 text = "Start Game"
 
 [node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_fonts/font = ExtResource("4_0mkaa")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("5_qxydu")
 text = "Options"
 
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_fonts/font = ExtResource("4_0mkaa")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("5_qxydu")
 text = "Quit To Desktop"
 
 [connection signal="button_up" from="MarginContainer/HBoxContainer/VBoxContainer2/Start" to="." method="_on_start_button_up"]

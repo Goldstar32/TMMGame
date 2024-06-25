@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://brj6qsyhfjkw3"]
+
+[ext_resource type="FontFile" uid="uid://dftd16vvel3ma" path="res://Assets/styling/fonts/ByteBounce.ttf" id="1_acowi"]
+
+[resource]
+default_font = ExtResource("1_acowi")
+default_font_size = 64
+OptionButton/font_sizes/font_size = 32
+PopupMenu/font_sizes/font_size = 32
