@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bumkwyodpae4c"]
 
-[ext_resource type="Texture2D" uid="uid://tu2lmp5ft7qd" path="res://Assets/sprites/menu-stuff/pad-arrow.png" id="1_konqf"]
 [ext_resource type="Script" path="res://Scripts/Menus/options_menu.gd" id="1_mwxus"]
 [ext_resource type="FontFile" uid="uid://dftd16vvel3ma" path="res://Assets/fonts/ByteBounce.ttf" id="2_xmtr6"]
+[ext_resource type="Texture2D" uid="uid://tu2lmp5ft7qd" path="res://Assets/images/menu-stuff/pad-arrow.png" id="3_3nwrf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0uj0"]
 bg_color = Color(0.108516, 0.137763, 0.189462, 1)
@@ -167,7 +167,7 @@ mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 20
 text = "
 "
-icon = ExtResource("1_konqf")
+icon = ExtResource("3_3nwrf")
 icon_alignment = 1
 
 [connection signal="drag_ended" from="MenuPanel/MarginContainer/VBoxContainer/Content/SoundOptions/GridContainer2/MainSlider" to="." method="_on_main_slider_drag_ended"]

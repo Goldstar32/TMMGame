@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tu2lmp5ft7qd"
-path="res://.godot/imported/pad-arrow.png-1e1b6a55b5d75818f3e86599019a0e73.ctex"
+uid="uid://o58krccccykj"
+path="res://.godot/imported/main-menu-background-nochars.png-f1698ad2b5f3bcd7adc4418a05c43302.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/menu-stuff/pad-arrow.png"
-dest_files=["res://.godot/imported/pad-arrow.png-1e1b6a55b5d75818f3e86599019a0e73.ctex"]
+source_file="res://Assets/images/menu-stuff/main-menu-background-nochars.png"
+dest_files=["res://.godot/imported/main-menu-background-nochars.png-f1698ad2b5f3bcd7adc4418a05c43302.ctex"]
 
 [params]
 
