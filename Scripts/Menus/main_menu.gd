@@ -15,7 +15,7 @@ func _on_start_button_up():
 	$SFX.play()
 	
 	# Change scene to TestLevel
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://Scenes/Testing/test_level.tscn")
 
 
@@ -34,4 +34,5 @@ func _on_options_button_up():
 	
 	# Lägger till optionsscenen till main menu
 	var options = preload("res://Scenes/Menus/options_menu.tscn").instantiate()
+	options.menu_from_main_menu()
 	get_tree().get_root().add_child(options)
