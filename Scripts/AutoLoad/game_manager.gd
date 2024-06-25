@@ -26,5 +26,5 @@ func unpause():
 	
 func set_cam(camera : Camera2D):
 	cam = camera
-func set_pausible(paus : bool):
+func set_pausable(paus : bool):
 	pausable = paus
