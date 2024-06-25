@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgh7ncyntli4u"]
+[gd_scene load_steps=6 format=3 uid="uid://b3xx10p0gvujg"]
 
-[ext_resource type="FontFile" uid="uid://dftd16vvel3ma" path="res://Assets/styling/fonts/ByteBounce.ttf" id="1_ou7gr"]
-[ext_resource type="Theme" uid="uid://brj6qsyhfjkw3" path="res://Assets/styling/themes/menu_button_theme.tres" id="2_dh3ag"]
-[ext_resource type="Texture2D" uid="uid://tu2lmp5ft7qd" path="res://Assets/images/menu-stuff/pad-arrow.png" id="2_mkvl5"]
+[ext_resource type="Script" path="res://Scenes/Menus/pause_menu.gd" id="1_e2mb6"]
+[ext_resource type="FontFile" uid="uid://dftd16vvel3ma" path="res://Assets/styling/fonts/ByteBounce.ttf" id="1_oddyw"]
+[ext_resource type="Theme" uid="uid://brj6qsyhfjkw3" path="res://Assets/styling/themes/menu_button_theme.tres" id="2_dmd0x"]
+[ext_resource type="Texture2D" uid="uid://tu2lmp5ft7qd" path="res://Assets/images/menu-stuff/pad-arrow.png" id="3_x0402"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2c88"]
 bg_color = Color(0.108516, 0.137763, 0.189462, 1)
@@ -16,13 +17,14 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="in_game_menu" type="Control"]
+[node name="pause_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_e2mb6")
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
 bus = &"SFX"
@@ -62,7 +64,7 @@ theme_override_constants/separation = 80
 
 [node name="Options" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_ou7gr")
+theme_override_fonts/font = ExtResource("1_oddyw")
 theme_override_font_sizes/font_size = 96
 text = "Paused"
 horizontal_alignment = 1
@@ -74,17 +76,17 @@ theme_override_constants/separation = 30
 
 [node name="Button" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_dh3ag")
+theme = ExtResource("2_dmd0x")
 text = "Resume"
 
 [node name="Button2" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_dh3ag")
+theme = ExtResource("2_dmd0x")
 text = "Options"
 
 [node name="Button3" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_dh3ag")
+theme = ExtResource("2_dmd0x")
 text = "Quit To Main Menu"
 
 [node name="Close" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer"]
@@ -94,5 +96,5 @@ mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 20
 text = "
 "
-icon = ExtResource("2_mkvl5")
+icon = ExtResource("3_x0402")
 icon_alignment = 1
