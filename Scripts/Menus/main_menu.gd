@@ -23,7 +23,7 @@ func _on_quit_button_up():
 	$SFX.stream = click_sound
 	$SFX.play()
 	
-	# Stänger ned programmet
+	# Shuts down the program
 	await get_tree().create_timer(0.3).timeout
 	get_tree().quit()
 
@@ -32,7 +32,7 @@ func _on_options_button_up():
 	$SFX.stream = click_sound
 	$SFX.play()
 	
-	# Lägger till optionsscenen till main menu
+	# Adds the options scene to main menu scene
 	var options = preload("res://Scenes/Menus/options_menu.tscn").instantiate()
 	options.menu_from_main_menu()
 	get_tree().get_root().add_child(options)
