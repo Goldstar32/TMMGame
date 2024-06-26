@@ -8,20 +8,24 @@ var cam : Camera2D
 var screen_size
 var menu_tablet : Control
 var tween : Tween
+var anabled = true
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _input(event : InputEvent):
 	if event.is_action_released("pause") and pausable:
-		if !pause_menu_instance:
-			pause_menu_instance = pause_menu.instantiate()
-			menu_tablet = pause_menu_instance.find_child("MenuPanel")
-		if get_tree().paused:
-			unpause()
-		else:
-			pause()
-		
+		if anabled:
+			anabled = false
+			
+			if !pause_menu_instance:
+				pause_menu_instance = pause_menu.instantiate()
+				menu_tablet = pause_menu_instance.find_child("MenuPanel")
+			if get_tree().paused:
+				unpause()
+			else:
+				pause()
+			
 func pause():
 	get_tree().paused = true
 	update_screen_size()
@@ -67,6 +71,8 @@ func screen_animate(direction):
 		tween.tween_property(menu_tablet, "position", Vector2(x_pos, y_pos), 0.5)
 	if direction == "out":
 		tween.tween_property(menu_tablet, "position", Vector2(x_pos, screen_size[1]), 0.5)
+	await tween.finished
+	anabled = true
 func cam_animate(direction):
 	var x_pos = -menu_tablet.size[0]/2
 	var y_pos = -menu_tablet.size[1]/2
@@ -79,7 +85,8 @@ func cam_animate(direction):
 		tween.tween_property(menu_tablet, "position", Vector2(x_pos, y_pos), 0.5)
 	if direction == "out":
 		tween.tween_property(menu_tablet, "position", Vector2(x_pos, -y_pos), 0.5)
-
+	await tween.finished
+	anabled = true
 # Available function everywhere to get current screen size
 func update_screen_size():
 	screen_size = get_viewport().get_visible_rect().size
