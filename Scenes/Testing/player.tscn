@@ -59,14 +59,15 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b7tim"]
-radius = 4.0
-height = 14.0
+radius = 3.0
+height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_jv12e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.997306)
 texture = ExtResource("1_330hy")
 offset = Vector2(0, -32)
 hframes = 8
@@ -81,4 +82,5 @@ libraries = {
 z_index = 1
 position = Vector2(0, -4)
 rotation = 1.5708
+scale = Vector2(1, 1.00426)
 shape = SubResource("CapsuleShape2D_b7tim")
