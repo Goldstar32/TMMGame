@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3xx10p0gvujg"]
+[gd_scene load_steps=5 format=3 uid="uid://b3xx10p0gvujg"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/pause_menu.gd" id="1_e2mb6"]
-[ext_resource type="FontFile" uid="uid://dftd16vvel3ma" path="res://Assets/styling/fonts/ByteBounce.ttf" id="1_oddyw"]
 [ext_resource type="Theme" uid="uid://brj6qsyhfjkw3" path="res://Assets/styling/themes/menu_button_theme.tres" id="2_dmd0x"]
+[ext_resource type="Texture2D" uid="uid://tu2lmp5ft7qd" path="res://Assets/images/menu-stuff/pad-arrow.png" id="3_78f04"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2c88"]
 bg_color = Color(0.108516, 0.137763, 0.189462, 1)
@@ -65,6 +65,7 @@ theme_override_constants/separation = 80
 
 [node name="Paused" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_dmd0x")
 theme_override_font_sizes/font_size = 96
 text = "Paused"
 horizontal_alignment = 1
@@ -96,6 +97,7 @@ mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 20
 text = "
 "
+icon = ExtResource("3_78f04")
 icon_alignment = 1
 
 [connection signal="button_up" from="MenuPanel/MarginContainer/VBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_button_up"]
