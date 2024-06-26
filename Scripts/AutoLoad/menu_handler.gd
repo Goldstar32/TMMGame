@@ -2,11 +2,16 @@ extends Node
 
 @onready var pause_menu = preload("res://Scenes/Menus/pause_menu.tscn")
 var pause_menu_instance : Control
+var menu_tablet : Control
+
+@onready var options_menu = preload("res://Scenes/Menus/options_menu.tscn")
+var options_menu_instance : Control
+var options_tablet : Control
 
 var pausable = true
 var cam : Camera2D
+
 var screen_size
-var menu_tablet : Control
 var tween : Tween
 var anabled = true
 
@@ -14,18 +19,23 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _input(event : InputEvent):
-	if event.is_action_released("pause") and pausable:
-		if anabled:
-			anabled = false
+	if event.is_action_released("pause"):
+		if pausable:
+			if anabled:
+				anabled = false
 			
-			if !pause_menu_instance:
-				pause_menu_instance = pause_menu.instantiate()
-				menu_tablet = pause_menu_instance.find_child("MenuPanel")
-			if get_tree().paused:
-				unpause()
-			else:
-				pause()
-			
+				if !pause_menu_instance:
+					pause_menu_instance = pause_menu.instantiate()
+					menu_tablet = pause_menu_instance.find_child("MenuPanel")
+				if get_tree().paused:
+					if options_menu_instance:
+						remove_options()
+					else:
+						unpause()
+				else:
+					pause()
+		elif options_menu_instance:
+			remove_options()
 func pause():
 	get_tree().paused = true
 	update_screen_size()
@@ -52,7 +62,29 @@ func unpause():
 	pause_menu_instance = null
 	get_tree().paused = false
 	
+func add_options():
+	update_screen_size()
 	
+	if !options_menu_instance:
+			options_menu_instance = options_menu.instantiate()
+			options_tablet = options_menu_instance.find_child("MenuPanel")
+	
+	if pausable:
+		pause_menu_instance.add_child(options_menu_instance)
+	else:
+		get_tree().root.add_child(options_menu_instance)
+		options_animate("in")
+	anabled = true
+func remove_options():
+	update_screen_size()
+	
+	if !pausable:
+		options_animate("out")
+		await get_tree().create_timer(0.5).timeout
+	options_menu_instance.queue_free()
+	options_menu_instance = null
+	
+	anabled = true
 func set_cam(camera : Camera2D):
 	cam = camera
 func set_pausable(paus : bool):
@@ -87,6 +119,19 @@ func cam_animate(direction):
 		tween.tween_property(menu_tablet, "position", Vector2(x_pos, -y_pos), 0.5)
 	await tween.finished
 	anabled = true
+func options_animate(direction):
+	var x_pos = screen_size[0]/2 - options_tablet.size[0]/2
+	var y_pos = screen_size[1]/2 - options_tablet.size[1]/2
+	
+	if tween:
+		tween.kill()
+	tween = options_menu_instance.create_tween()
+	if direction == "in":
+		options_tablet.set_position(Vector2(x_pos, screen_size[1]))
+		tween.tween_property(options_tablet, "position", Vector2(x_pos, y_pos), 0.5)
+	if direction == "out":
+		tween.tween_property(options_tablet, "position", Vector2(x_pos, screen_size[1]), 0.5)
+		
 # Available function everywhere to get current screen size
 func update_screen_size():
 	screen_size = get_viewport().get_visible_rect().size

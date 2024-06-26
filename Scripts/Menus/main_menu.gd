@@ -3,12 +3,12 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GameManager.set_pausable(false)
+	MenuHandler.set_pausable(false)
 	pass
 # Called when a notification is sent ex. predelete, before exiting the scene
 func _notification(what):
 	if what == NOTIFICATION_PREDELETE:
-		GameManager.set_pausable(true)
+		MenuHandler.set_pausable(true)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,6 +39,4 @@ func _on_options_button_up():
 	$SFX.play()
 	
 	# Adds the options scene to main menu scene
-	var options = preload("res://Scenes/Menus/options_menu.tscn").instantiate()
-	options.menu_from_main_menu()
-	get_tree().get_root().add_child(options)
+	MenuHandler.add_options()

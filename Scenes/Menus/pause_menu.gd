@@ -11,18 +11,17 @@ func _on_resume_button_up():
 	$SFX.stream = click_sound
 	$SFX.play()
 	
-	GameManager.unpause()
+	MenuHandler.unpause()
 
 func _on_options_button_up():
 	$SFX.stream = click_sound
 	$SFX.play()
 	
-	var options = preload("res://Scenes/Menus/options_menu.tscn").instantiate()
-	add_child(options)
+	MenuHandler.add_options()
 
 func _on_quit_to_main_button_up():
 	get_tree().paused = false
-	GameManager.pause_menu_instance = null
+	MenuHandler.pause_menu_instance = null
 	
 	$SFX.stream = click_sound
 	$SFX.play()
@@ -35,5 +34,5 @@ func _on_close_button_up():
 	$SFX.stream = click_sound
 	$SFX.play()
 	
-	GameManager.unpause()
+	MenuHandler.unpause()
 
