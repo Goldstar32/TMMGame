@@ -4,10 +4,12 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameManager.set_pausable(false)
+	pass
 # Called when a notification is sent ex. predelete, before exiting the scene
 func _notification(what):
 	if what == NOTIFICATION_PREDELETE:
 		GameManager.set_pausable(true)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
