@@ -501,6 +501,6 @@ y_sort_enabled = false
 position = Vector2(66, 33)
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
-position = Vector2(0, -29)
+position = Vector2(0, -32)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
