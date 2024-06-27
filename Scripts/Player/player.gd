@@ -15,7 +15,7 @@ func update_animation():
 		var direction = "down"
 		if velocity.x < 0: direction = "down" # actually left
 		elif velocity.x > 0: direction = "down" # actually right
-		elif velocity.y < 0: direction = "down" # actually up
+		elif velocity.y < 0: direction = "up"
 	
 		animations.play("walk_" + direction)
 

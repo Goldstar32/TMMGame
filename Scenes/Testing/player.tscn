@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxes45efca7ys"]
+[gd_scene load_steps=9 format=3 uid="uid://bxes45efca7ys"]
 
 [ext_resource type="Texture2D" uid="uid://chptdvse64wuh" path="res://Assets/sprites/character-sprites/mafioso.png" id="1_330hy"]
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_jv12e"]
@@ -51,11 +51,29 @@ tracks/0/keys = {
 "values": [Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_ftpnl"]
+resource_name = "walk_up"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(6, 1), Vector2i(7, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fh44g"]
 _data = {
 "RESET": SubResource("Animation_4wquc"),
 "idle_down": SubResource("Animation_uh3vl"),
-"walk_down": SubResource("Animation_cpij6")
+"walk_down": SubResource("Animation_cpij6"),
+"walk_up": SubResource("Animation_ftpnl")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b7tim"]
