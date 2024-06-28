@@ -84,10 +84,6 @@ func remove_options():
 	options_menu_instance = null
 	
 	anabled = true
-func set_cam(camera : Camera2D):
-	cam = camera
-func set_pausable(paus : bool):
-	pausable = paus
 	
 # Makes a tween based on the screen size
 func screen_animate(direction):
@@ -109,15 +105,16 @@ func cam_animate(direction):
 	# WHY DOES IT HAVE TO BE DIVIDED BY 6???????
 	var x_pos = cam.get_screen_center_position()[0] - pause_menu_instance.size[0]/6
 	var y_pos = cam.get_screen_center_position()[1] - pause_menu_instance.size[1]/6
+	var y_pos_0 = y_pos + pause_menu_instance.size[1]/3
 	
 	if tween:
 		tween.kill()
 	tween = pause_menu_instance.create_tween()
 	if direction == "in":
-		pause_menu_instance.set_position(Vector2(x_pos, y_pos + pause_menu_instance.size[1]/3))
+		pause_menu_instance.set_position(Vector2(x_pos, y_pos_0))
 		tween.tween_property(pause_menu_instance, "position", Vector2(x_pos, y_pos), 0.5)
 	if direction == "out":
-		tween.tween_property(pause_menu_instance, "position", Vector2(x_pos, y_pos + pause_menu_instance.size[1]/3), 0.5)
+		tween.tween_property(pause_menu_instance, "position", Vector2(x_pos, y_pos_0), 0.5)
 	await tween.finished
 	anabled = true
 	
@@ -138,3 +135,9 @@ func options_animate(direction):
 func update_screen_size():
 	screen_size = get_viewport().get_visible_rect().size
 	return screen_size
+	
+func set_cam(camera : Camera2D):
+	cam = camera
+	
+func set_pausable(paus : bool):
+	pausable = paus

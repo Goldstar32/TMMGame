@@ -21,13 +21,15 @@ func _on_options_button_up():
 
 func _on_quit_to_main_button_up():
 	get_tree().paused = false
-	MenuHandler.pause_menu_instance = null
 	
 	$SFX.stream = click_sound
 	$SFX.play()
 	await get_tree().create_timer(0.3).timeout
 	
 	get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
+	
+	MenuHandler.pause_menu_instance.queue_free()
+	MenuHandler.pause_menu_instance = null
 
 
 func _on_close_button_up():
