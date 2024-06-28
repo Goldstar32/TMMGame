@@ -114,10 +114,10 @@ func cam_animate(direction):
 		tween.kill()
 	tween = pause_menu_instance.create_tween()
 	if direction == "in":
-		pause_menu_instance.set_position(Vector2(x_pos, -y_pos))
+		pause_menu_instance.set_position(Vector2(x_pos, y_pos + pause_menu_instance.size[1]/3))
 		tween.tween_property(pause_menu_instance, "position", Vector2(x_pos, y_pos), 0.5)
 	if direction == "out":
-		tween.tween_property(pause_menu_instance, "position", Vector2(x_pos, -y_pos), 0.5)
+		tween.tween_property(pause_menu_instance, "position", Vector2(x_pos, y_pos + pause_menu_instance.size[1]/3), 0.5)
 	await tween.finished
 	anabled = true
 	
