@@ -23,7 +23,6 @@ func _input(event : InputEvent):
 		if pausable:
 			if anabled:
 				anabled = false
-			
 				if !pause_menu_instance:
 					pause_menu_instance = pause_menu.instantiate()
 					menu_tablet = pause_menu_instance.find_child("MenuPanel")
@@ -42,7 +41,7 @@ func pause():
 	
 	if cam:
 		pause_menu_instance.scale = Vector2(cam.zoom[0] ** -1, cam.zoom[1] ** -1)
-		cam.add_child(pause_menu_instance)
+		get_tree().root.add_child(pause_menu_instance)
 		cam_animate("in")
 	else:
 		get_tree().root.add_child(pause_menu_instance)
@@ -105,20 +104,23 @@ func screen_animate(direction):
 		tween.tween_property(menu_tablet, "position", Vector2(x_pos, screen_size[1]), 0.5)
 	await tween.finished
 	anabled = true
+# Makes a tween based on cameras center position
 func cam_animate(direction):
-	var x_pos = -menu_tablet.size[0]/2
-	var y_pos = -menu_tablet.size[1]/2
+	# WHY DOES IT HAVE TO BE DIVIDED BY 6???????
+	var x_pos = cam.get_screen_center_position()[0] - pause_menu_instance.size[0]/6
+	var y_pos = cam.get_screen_center_position()[1] - pause_menu_instance.size[1]/6
 	
 	if tween:
 		tween.kill()
 	tween = pause_menu_instance.create_tween()
 	if direction == "in":
-		menu_tablet.set_position(Vector2(x_pos, -y_pos))
-		tween.tween_property(menu_tablet, "position", Vector2(x_pos, y_pos), 0.5)
+		pause_menu_instance.set_position(Vector2(x_pos, -y_pos))
+		tween.tween_property(pause_menu_instance, "position", Vector2(x_pos, y_pos), 0.5)
 	if direction == "out":
-		tween.tween_property(menu_tablet, "position", Vector2(x_pos, -y_pos), 0.5)
+		tween.tween_property(pause_menu_instance, "position", Vector2(x_pos, -y_pos), 0.5)
 	await tween.finished
 	anabled = true
+	
 func options_animate(direction):
 	var x_pos = screen_size[0]/2 - options_tablet.size[0]/2
 	var y_pos = screen_size[1]/2 - options_tablet.size[1]/2
