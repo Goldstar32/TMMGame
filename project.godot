@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 MenuHandler="*res://Scripts/AutoLoad/menu_handler.gd"
+ConfigHandler="*res://Scripts/AutoLoad/config_handler.gd"
 
 [display]
 
