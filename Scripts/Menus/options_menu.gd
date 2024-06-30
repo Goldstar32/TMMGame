@@ -26,8 +26,6 @@ func _ready():
 	
 	var mode_option_button = $MenuPanel/MarginContainer/VBoxContainer/Content/OtherOptions/Mode
 	var window_mode = window_mode_to_int(video_settings.display_mode)
-	print(window_mode)
-	print(video_settings.display_mode)
 	mode_option_button.select(window_mode)
 	
 
