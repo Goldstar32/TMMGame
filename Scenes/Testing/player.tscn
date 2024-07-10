@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxes45efca7ys"]
+[gd_scene load_steps=10 format=3 uid="uid://bxes45efca7ys"]
 
 [ext_resource type="Texture2D" uid="uid://chptdvse64wuh" path="res://Assets/sprites/character-sprites/mafioso.png" id="1_330hy"]
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_jv12e"]
@@ -68,10 +68,27 @@ tracks/0/keys = {
 "values": [Vector2i(0, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(6, 1), Vector2i(7, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_b6uwf"]
+resource_name = "idle_up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fh44g"]
 _data = {
 "RESET": SubResource("Animation_4wquc"),
 "idle_down": SubResource("Animation_uh3vl"),
+"idle_up": SubResource("Animation_b6uwf"),
 "walk_down": SubResource("Animation_cpij6"),
 "walk_up": SubResource("Animation_ftpnl")
 }
@@ -98,7 +115,7 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(0, -4)
+position = Vector2(0, -3)
 rotation = 1.5708
 scale = Vector2(1, 1.00426)
 shape = SubResource("CapsuleShape2D_b7tim")
