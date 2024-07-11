@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxes45efca7ys"]
+[gd_scene load_steps=14 format=3 uid="uid://bxes45efca7ys"]
 
 [ext_resource type="Texture2D" uid="uid://chptdvse64wuh" path="res://Assets/sprites/character-sprites/mafioso.png" id="1_330hy"]
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_jv12e"]
@@ -117,13 +117,47 @@ tracks/0/keys = {
 "values": [Vector2i(0, 2)]
 }
 
+[sub_resource type="Animation" id="Animation_ywxbu"]
+resource_name = "idle_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_0u518"]
+resource_name = "walk_left"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fh44g"]
 _data = {
 "RESET": SubResource("Animation_4wquc"),
 "idle_down": SubResource("Animation_uh3vl"),
+"idle_left": SubResource("Animation_ywxbu"),
 "idle_right": SubResource("Animation_4w3mo"),
 "idle_up": SubResource("Animation_b6uwf"),
 "walk_down": SubResource("Animation_cpij6"),
+"walk_left": SubResource("Animation_0u518"),
 "walk_right": SubResource("Animation_ogdj3"),
 "walk_up": SubResource("Animation_ftpnl")
 }
