@@ -5,7 +5,6 @@ extends Node2D
 func _ready():
 	MenuHandler.set_cam($TileMap/Player/Camera2D)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

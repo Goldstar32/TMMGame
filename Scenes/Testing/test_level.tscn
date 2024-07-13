@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7voc41pf7a2"]
+[gd_scene load_steps=12 format=3 uid="uid://c7voc41pf7a2"]
 
-[ext_resource type="PackedScene" uid="uid://bxes45efca7ys" path="res://Scenes/Testing/player.tscn" id="1_pnqww"]
-[ext_resource type="Script" path="res://Scenes/Testing/test_level.gd" id="1_wyu8d"]
-[ext_resource type="Texture2D" uid="uid://xr5vxv2x8dj" path="res://Assets/sprites/test-sprites/Texture/tileset_grass.png" id="2_4jheh"]
-[ext_resource type="Texture2D" uid="uid://bspu3r3fipy0n" path="res://Assets/sprites/test-sprites/Texture/props.png" id="3_6nox6"]
-[ext_resource type="Texture2D" uid="uid://bo017ee5wuxsa" path="res://Scenes/Testing/testperson.png" id="5_s8vbu"]
+[ext_resource type="PackedScene" uid="uid://bxes45efca7ys" path="res://scenes/testing/player.tscn" id="1_pnqww"]
+[ext_resource type="Script" path="res://scenes/testing/test_level.gd" id="1_wyu8d"]
+[ext_resource type="Texture2D" uid="uid://xr5vxv2x8dj" path="res://assets/sprites/test-sprites/Texture/tileset_grass.png" id="2_4jheh"]
+[ext_resource type="Texture2D" uid="uid://bspu3r3fipy0n" path="res://assets/sprites/test-sprites/Texture/props.png" id="3_6nox6"]
+[ext_resource type="Texture2D" uid="uid://bo017ee5wuxsa" path="res://scenes/testing/testperson.png" id="5_s8vbu"]
+[ext_resource type="Script" path="res://scenes/testing/testperson.gd" id="5_wd76f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44wuj"]
 texture = ExtResource("3_6nox6")
@@ -479,6 +480,9 @@ sources/1 = SubResource("TileSetAtlasSource_j3vhd")
 radius = 3.0
 height = 20.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_38f5y"]
+radius = 13.0384
+
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_wyu8d")
 
@@ -515,6 +519,7 @@ position_smoothing_speed = 8.0
 z_index = 1
 y_sort_enabled = true
 position = Vector2(250, 0)
+script = ExtResource("5_wd76f")
 
 [node name="Sprite2D" type="Sprite2D" parent="TileMap/StaticBody2D"]
 texture = ExtResource("5_s8vbu")
@@ -523,3 +528,14 @@ offset = Vector2(0, -19.675)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_4t7ux")
+
+[node name="Actionable" type="Area2D" parent="TileMap/StaticBody2D"]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/StaticBody2D/Actionable"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_38f5y")
+
+[connection signal="area_entered" from="TileMap/StaticBody2D/Actionable" to="TileMap/StaticBody2D" method="_on_actionable_area_entered"]
+[connection signal="area_exited" from="TileMap/StaticBody2D/Actionable" to="TileMap/StaticBody2D" method="_on_actionable_area_exited"]

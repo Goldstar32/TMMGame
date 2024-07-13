@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dahoia7y3oll3"]
 
-[ext_resource type="Script" path="res://Scripts/Menus/main_menu.gd" id="1_xlphf"]
-[ext_resource type="Texture2D" uid="uid://o58krccccykj" path="res://Assets/images/menu-stuff/main-menu-background-nochars.png" id="2_52nfi"]
-[ext_resource type="AudioStream" uid="uid://cv4e4oqc70eqb" path="res://Assets/music/main-menu-song.mp3" id="2_jcnbh"]
-[ext_resource type="FontFile" uid="uid://dftd16vvel3ma" path="res://Assets/styling/fonts/ByteBounce.ttf" id="4_0mkaa"]
-[ext_resource type="Theme" uid="uid://brj6qsyhfjkw3" path="res://Assets/styling/themes/menu_button_theme.tres" id="5_qxydu"]
+[ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_tvcek"]
+[ext_resource type="AudioStream" uid="uid://cv4e4oqc70eqb" path="res://assets/music/main-menu-song.mp3" id="2_4g66c"]
+[ext_resource type="Texture2D" uid="uid://o58krccccykj" path="res://assets/images/menu-stuff/main-menu-background-nochars.png" id="3_esfxk"]
+[ext_resource type="FontFile" uid="uid://dftd16vvel3ma" path="res://assets/styling/fonts/ByteBounce.ttf" id="4_l7vt1"]
+[ext_resource type="Theme" uid="uid://brj6qsyhfjkw3" path="res://assets/styling/themes/menu_button_theme.tres" id="5_0v7aw"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,10 +13,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xlphf")
+script = ExtResource("1_tvcek")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_jcnbh")
+stream = ExtResource("2_4g66c")
 autoplay = true
 bus = &"Music"
 
@@ -30,7 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_52nfi")
+texture = ExtResource("3_esfxk")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -59,7 +59,7 @@ theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 10
 theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("4_0mkaa")
+theme_override_fonts/font = ExtResource("4_l7vt1")
 theme_override_font_sizes/font_size = 256
 text = "Spelnamn"
 horizontal_alignment = 1
@@ -78,19 +78,19 @@ alignment = 1
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("5_qxydu")
+theme = ExtResource("5_0v7aw")
 text = "Start Game"
 
 [node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("5_qxydu")
+theme = ExtResource("5_0v7aw")
 text = "Options"
 
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("5_qxydu")
+theme = ExtResource("5_0v7aw")
 text = "Quit To Desktop"
 
 [connection signal="button_up" from="MarginContainer/HBoxContainer/VBoxContainer2/Start" to="." method="_on_start_button_up"]
