@@ -20,7 +20,8 @@ func _process(delta):
 
 func run_dialogue():
 	Dialogic.start("testperson_greeting")
-	input_hint_instance.queue_free()
+	if is_instance_valid(input_hint_instance):
+		input_hint_instance.queue_free()
 	dialogue_enabled = false
 	Dialogic.timeline_ended.connect(dialogue_ended)
 	
@@ -28,10 +29,14 @@ func run_dialogue():
 func dialogue_ended():
 	dialogue_enabled = true
 	Dialogic.timeline_ended.disconnect(dialogue_ended)
+	if !is_instance_valid(input_hint_instance):
+		input_hint_instance = input_hint.instantiate()
+		character.add_child(input_hint_instance)
 	
 func _on_actionable_area_entered(area):
-	input_hint_instance = input_hint.instantiate()
-	character.add_child(input_hint_instance)
+	if !is_instance_valid(input_hint_instance):
+		input_hint_instance = input_hint.instantiate()
+		character.add_child(input_hint_instance)
 	player_in_area = true
 
 
