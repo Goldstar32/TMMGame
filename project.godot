@@ -25,16 +25,32 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"testperson": "res://addons/dialogic/testperson.dch",
-"unit_test_character": "res://addons/Tests/Resources/unit_test_character.dch"
+"testperson": "res://addons/dialogic/characters/testperson.dch"
 }
 directories/dtl_directory={
 "testperson_greeting": "res://addons/dialogic/timelines/testperson_greeting.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://addons/dialogic/style.tres"]
-layout/default_style="res://addons/dialogic/style.tres"
+layout/style_list=["res://addons/dialogic/styles/style.tres"]
+layout/default_style="res://addons/dialogic/styles/style.tres"
 variables={}
+text/letter_speed=0.05
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+animations/join_default_length=0.5
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/join_default_wait=true
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
 
 [display]
 

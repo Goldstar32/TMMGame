@@ -1,5 +1,8 @@
 extends StaticBody2D
 
+var input_hint = preload("res://scenes/resources/input_hint.tscn")
+var input_hint_instance : Control
+@onready var character = $"."
 @onready var actionable = $Actionable
 var player_in_area
 var dialogue_enabled = true
@@ -24,10 +27,14 @@ func run_dialogue():
 
 func dialogue_ended():
 	dialogue_enabled = true
+	Dialogic.timeline_ended.disconnect(dialogue_ended)
 	
 func _on_actionable_area_entered(area):
+	input_hint_instance = input_hint.instantiate()
+	character.add_child(input_hint_instance)
 	player_in_area = true
 
 
 func _on_actionable_area_exited(area):
+	input_hint_instance.queue_free()
 	player_in_area = false
