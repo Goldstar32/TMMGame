@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bpffl5qstpb3y"
-path="res://.godot/imported/spacebar-click-keyboard-199448.mp3-80bb290be1159a473c59472bfad32b16.mp3str"
+path="res://.godot/imported/spacebar-click-keyboard-199448.mp3-8a34d1f5bcf5962f8e86ac01260fb76b.mp3str"
 
 [deps]
 
-source_file="res://assets/sfx/spacebar-click-keyboard-199448.mp3"
-dest_files=["res://.godot/imported/spacebar-click-keyboard-199448.mp3-80bb290be1159a473c59472bfad32b16.mp3str"]
+source_file="res://Assets/SFX/spacebar-click-keyboard-199448.mp3"
+dest_files=["res://.godot/imported/spacebar-click-keyboard-199448.mp3-8a34d1f5bcf5962f8e86ac01260fb76b.mp3str"]
 
 [params]
 
