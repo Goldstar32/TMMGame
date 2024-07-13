@@ -17,10 +17,10 @@ func _process(delta):
 	if player_in_area:
 		if Input.is_action_just_pressed("action") and dialogue_enabled:
 			run_dialogue()
-	pass
 
 func run_dialogue():
 	Dialogic.start("testperson_greeting")
+	input_hint_instance.queue_free()
 	dialogue_enabled = false
 	Dialogic.timeline_ended.connect(dialogue_ended)
 	
@@ -36,5 +36,6 @@ func _on_actionable_area_entered(area):
 
 
 func _on_actionable_area_exited(area):
-	input_hint_instance.queue_free()
+	if is_instance_valid(input_hint_instance):
+		input_hint_instance.queue_free()
 	player_in_area = false
