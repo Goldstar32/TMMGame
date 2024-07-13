@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxes45efca7ys"]
+[gd_scene load_steps=10 format=3 uid="uid://bxes45efca7ys"]
 
-[ext_resource type="Texture2D" uid="uid://chptdvse64wuh" path="res://Assets/sprites/character-sprites/mafioso.png" id="1_330hy"]
-[ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_jv12e"]
+[ext_resource type="Texture2D" uid="uid://chptdvse64wuh" path="res://assets/sprites/character-sprites/mafioso.png" id="1_330hy"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_jv12e"]
 
 [sub_resource type="Animation" id="Animation_4wquc"]
 length = 0.001
@@ -166,6 +166,9 @@ _data = {
 radius = 3.0
 height = 28.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0cted"]
+radius = 42.4264
+
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_jv12e")
@@ -188,3 +191,11 @@ position = Vector2(0, -3)
 rotation = 1.5708
 scale = Vector2(1, 1.00426)
 shape = SubResource("CapsuleShape2D_b7tim")
+
+[node name="ActionableFinder" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]
+position = Vector2(0, -20)
+shape = SubResource("CircleShape2D_0cted")
