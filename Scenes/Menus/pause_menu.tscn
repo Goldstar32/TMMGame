@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3xx10p0gvujg"]
 
-[ext_resource type="Script" path="res://Scripts/Menus/pause_menu.gd" id="1_kllwu"]
-[ext_resource type="Theme" uid="uid://brj6qsyhfjkw3" path="res://Assets/styling/themes/menu_button_theme.tres" id="2_dmd0x"]
-[ext_resource type="Texture2D" uid="uid://tu2lmp5ft7qd" path="res://Assets/images/menu-stuff/pad-arrow.png" id="3_78f04"]
+[ext_resource type="Script" path="res://scripts/menus/pause_menu.gd" id="1_xo1i5"]
+[ext_resource type="Theme" uid="uid://brj6qsyhfjkw3" path="res://assets/styling/themes/menu_button_theme.tres" id="2_gb4ng"]
+[ext_resource type="Texture2D" uid="uid://tu2lmp5ft7qd" path="res://assets/images/menu-stuff/pad-arrow.png" id="3_d3hil"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2c88"]
 bg_color = Color(0.108516, 0.137763, 0.189462, 1)
@@ -25,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kllwu")
+script = ExtResource("1_xo1i5")
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
 bus = &"SFX"
@@ -65,7 +65,7 @@ theme_override_constants/separation = 80
 
 [node name="Paused" type="Label" parent="MenuPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_dmd0x")
+theme = ExtResource("2_gb4ng")
 theme_override_font_sizes/font_size = 96
 text = "Paused"
 horizontal_alignment = 1
@@ -77,17 +77,17 @@ theme_override_constants/separation = 30
 
 [node name="Resume" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_dmd0x")
+theme = ExtResource("2_gb4ng")
 text = "Resume"
 
 [node name="Options" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_dmd0x")
+theme = ExtResource("2_gb4ng")
 text = "Options"
 
 [node name="QuitToMain" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_dmd0x")
+theme = ExtResource("2_gb4ng")
 text = "Quit To Main Menu"
 
 [node name="Close" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer"]
@@ -97,7 +97,7 @@ mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 20
 text = "
 "
-icon = ExtResource("3_78f04")
+icon = ExtResource("3_d3hil")
 icon_alignment = 1
 
 [connection signal="button_up" from="MenuPanel/MarginContainer/VBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_button_up"]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnyhmpfdcfeeh"]
+
+[ext_resource type="Texture2D" uid="uid://ckbxly60taxqw" path="res://assets/images/input-hint.png" id="1_8f8kw"]
+[ext_resource type="Theme" uid="uid://brj6qsyhfjkw3" path="res://assets/styling/themes/menu_button_theme.tres" id="2_4fghp"]
+
+[node name="InputHint" type="Control"]
+z_index = 8
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_top = -40.0
+offset_right = 5.0
+offset_bottom = -40.0
+size_flags_vertical = 0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+scale = Vector2(0.96715, 1.00431)
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8f8kw")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.83017
+offset_top = -6.00857
+offset_right = 4.16983
+offset_bottom = 4.99143
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_4fghp")
+theme_override_font_sizes/font_size = 16
+text = "E"
