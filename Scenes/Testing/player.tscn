@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bxes45efca7ys"]
 
-[ext_resource type="Texture2D" uid="uid://chptdvse64wuh" path="res://assets/sprites/character-sprites/mafioso.png" id="1_330hy"]
+[ext_resource type="Texture2D" uid="uid://chptdvse64wuh" path="res://Assets/sprites/character-sprites/mafioso.png" id="1_330hy"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_jv12e"]
 
 [sub_resource type="Animation" id="Animation_4wquc"]
@@ -126,10 +126,10 @@ tracks/0/path = NodePath("Sprite2D:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [Vector2i(0, 2)]
+"values": [Vector2i(0, 2), Vector2i(1, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_ftpnl"]
