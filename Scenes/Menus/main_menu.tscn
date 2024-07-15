@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dahoia7y3oll3"]
 
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_tvcek"]
-[ext_resource type="AudioStream" uid="uid://cv4e4oqc70eqb" path="res://assets/music/main-menu-song.mp3" id="2_4g66c"]
-[ext_resource type="Texture2D" uid="uid://o58krccccykj" path="res://assets/images/menu-stuff/main-menu-background-nochars.png" id="3_esfxk"]
-[ext_resource type="FontFile" uid="uid://dftd16vvel3ma" path="res://assets/styling/fonts/ByteBounce.ttf" id="4_l7vt1"]
-[ext_resource type="Theme" uid="uid://brj6qsyhfjkw3" path="res://assets/styling/themes/menu_button_theme.tres" id="5_0v7aw"]
+[ext_resource type="AudioStream" uid="uid://cv4e4oqc70eqb" path="res://Assets/music/main-menu-song.mp3" id="2_4g66c"]
+[ext_resource type="Texture2D" uid="uid://o58krccccykj" path="res://Assets/images/menu-stuff/main-menu-background-nochars.png" id="3_esfxk"]
+[ext_resource type="FontFile" uid="uid://dftd16vvel3ma" path="res://Assets/styling/fonts/ByteBounce.ttf" id="4_l7vt1"]
+[ext_resource type="Theme" uid="uid://brj6qsyhfjkw3" path="res://Assets/styling/themes/menu_button_theme.tres" id="5_0v7aw"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
